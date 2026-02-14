@@ -1,13 +1,3 @@
-# MERN To-Do App
+# mern-todo
 
-## Flow Diagram
-
-React Frontend
-      |
-      | Axios / Fetch (HTTP Requests)
-      v
-Express Backend (Node + Express)
-      |
-      | Mongoose (Object Document Mapper)
-      v
-MongoDB Atlas (Database)
+Under development...
