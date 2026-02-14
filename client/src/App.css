@@ -1,0 +1,246 @@
+/* Global Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0%;
+}
+
+.subContainer.header {
+  background-color: #0D0D0D;
+  color: #F5F5F5;
+}
+
+/* Parent Container */
+.container {
+  width: 90%;
+  max-width: 600px;
+  height: calc(100vh - 4rem);
+  /* subtract top+bottom margin of 2rem each */
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Sub-Container */
+.subContainer {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* flex-grow only if needed, allow scrolling inside */
+.subContainer.listContainer {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.subContainer.listContainer ul {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  scrollbar-gutter: stable;
+  padding-right: 10px;
+}
+
+.subContainer.listContainer ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.subContainer.listContainer ul::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 10px;
+}
+
+
+/* Add Task Form */
+form {
+  display: flex;
+  gap: 10px;
+  padding-right: 18px;
+}
+
+/* Task Input */
+input[type="text"] {
+  background-color: #eee;
+  color: #333;
+  flex: 1;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+input[type="text"]:hover {
+  border-color: #aaa;
+}
+
+input[type="text"]:focus {
+  border-color: #006BE0;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+  background-color: #fff;
+  outline: none;
+}
+
+/* Button Container inside Task */
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+/* Buttons */
+button {
+  background-color: transparent;
+  color: #333;
+  padding: 10px 15px;
+  min-width: 100px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 2px solid #006BE0;
+}
+
+button[type="submit"]:hover {
+  background-color: #006BE0;
+  color: #f5f5f5;
+}
+
+button.complete:hover {
+  background-color: #1A7930;
+  color: #f5f5f5;
+}
+
+button.undo:hover {
+  background-color: #006BE0;
+  color: #f5f5f5;
+}
+
+button.delete:hover {
+  background-color: #B02835;
+  color: #f5f5f5;
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+li:hover button {
+  background-color: #f9f9f9;
+}
+
+li span {
+  display: flex;
+  align-items: center;
+  text-align: start;
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+
+li span:hover {
+  border: 1px solid #ccc;
+  transition: all 0.2s ease;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.emptyMessage {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  padding: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 16px;
+  }
+
+  form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  li {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  li span {
+    width: 90%;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+    width: 90%;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
