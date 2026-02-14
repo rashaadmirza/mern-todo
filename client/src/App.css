@@ -109,6 +109,12 @@ input[type="text"]:focus {
 .buttonContainer {
   display: flex;
   gap: 10px;
+  justify-content: flex-end;
+
+  /* Hide by default */
+  opacity: 0;
+  pointer-events: none; /* prevent accidental clicks */
+  transition: opacity 0.2s ease;
 }
 
 /* Buttons */
@@ -183,6 +189,12 @@ li {
 
 li:hover button {
   background-color: #f9f9f9;
+}
+
+/* Show when parent li is hovered */
+li:hover .buttonContainer {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 li span {
